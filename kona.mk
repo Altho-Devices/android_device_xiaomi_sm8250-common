@@ -645,6 +645,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.target.rc \
     fstab.qcom \
+    init.performance_level.rc \
     fstab.qcom_ramdisk \
     ueventd.qcom.rc
 
