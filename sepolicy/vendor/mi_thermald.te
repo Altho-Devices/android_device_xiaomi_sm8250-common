@@ -4,6 +4,7 @@ type mi_thermald_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(mi_thermald)
 
 allow mi_thermald self:capability { chown fowner fsetid };
+allow mi_thermald mi_thermald:capability { sys_admin };
 
 # Allow mi_thermald to read thermal_data_file
 allow mi_thermald thermal_data_file:dir rw_dir_perms;
@@ -20,6 +21,7 @@ r_dir_file(mi_thermald, sysfs)
 # Allow mi_thermald to read and write to sysfs_*
 allow mi_thermald {
   vendor_sysfs_battery_supply
+  sysfs_battery_supply 
   sysfs_devices_system_cpu
   vendor_sysfs_graphics
   vendor_sysfs_kgsl
